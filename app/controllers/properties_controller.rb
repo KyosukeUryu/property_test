@@ -1,11 +1,15 @@
 class PropertiesController < ApplicationController
+  before_action :set_property, only: %i[show edit update destroy]
+
   def index
     @properties = Property.all
   end
 
   def new
     @property = Property.new
-    @property.nearest_stations.build
+    2.times do
+      @property.nearest_stations.build
+    end
   end
 
   def create
@@ -33,5 +37,9 @@ class PropertiesController < ApplicationController
 
   def property_params
     params.require(:property).permit(:name, :rent, :address, :age, :remarks, nearest_stations_attributes:[:id, :route, :name, :on_foot])
+  end
+
+  def set_property
+    @property = Property.find(params[:id])
   end
 end

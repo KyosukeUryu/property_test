@@ -11,45 +11,35 @@
 <% end %>
 </div>
 
+<ul>
 <%= form_for(@property) do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <li><%= f.text_field :name %></li>
 
   <%= f.label :rent %>
-  <%= f.text_field :rent %>
+  <li><%= f.text_field :rent %></li>
 
   <%= f.label :address %>
-  <%= f.text_field :address %>
+  <li><%= f.text_field :address %></li>
 
   <%= f.label :age %>
-  <%= f.text_field :age %>
+  <li><%= f.text_field :age %></li>
 
   <%= f.label :remarks %>
-  <%= f.text_field :remarks %>
+  <li><%= f.text_field :remarks %></li>
 
-  <%= f.label :nearest_stations, '最寄り駅１' %>
+  <%= f.label :nearest_stations, '最寄り駅' %><br>
   <%= f.fields_for :nearest_stations do |station_form| %>
     <%= station_form.label :route %>
-    <%= station_form.text_field :route %>
+    <li><%= station_form.text_field :route %></li>
 
     <%= station_form.label :name %>
-    <%= station_form.text_field :name %>
+    <li><%= station_form.text_field :name %></li>
 
     <%= station_form.label :on_foot %>
-    <%= station_form.text_field :on_foot %>
-  <% end %>
-
-  <%= f.label :nearest_stations, '最寄り駅２' %>
-  <%= f.fields_for :nearest_stations do |station_form| %>
-    <%= station_form.label :route %>
-    <%= station_form.text_field :route %>
-
-    <%= station_form.label :name %>
-    <%= station_form.text_field :name %>
-
-    <%= station_form.label :on_foot %>
-    <%= station_form.text_field :on_foot %>
+    <li><%= station_form.text_field :on_foot %></li>
   <% end %>
 
   <%= f.submit %>
 <% end %>
+</ul>
