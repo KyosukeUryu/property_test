@@ -1,0 +1,43 @@
+<h2>物件登録</h2>
+
+<div class="error-explanation">
+<% if @property.errors.any? %>
+  <p><%= @property.errors.count %> 件のエラーがあります</p>
+  <ul class="error-msg">
+  <% @property.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+</div>
+
+<%= form_for(@property) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :rent %>
+  <%= f.text_field :rent %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+
+  <%= f.label :remarks %>
+  <%= f.text_field :remarks %>
+
+  <%= f.label :nearest_stations, '最寄駅１' %>
+  <%= f.fields_for :nearest_stations do |station_form| %>
+    <%= station_form.label :route %>
+    <%= station_form.text_field :route %>
+
+    <%= station_form.label :name %>
+    <%= station_form.text_field :name %>
+
+    <%= station_form.label :on_foot %>
+    <%= station_form.text_field :on_foot %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
