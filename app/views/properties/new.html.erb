@@ -27,7 +27,19 @@
   <%= f.label :remarks %>
   <%= f.text_field :remarks %>
 
-  <%= f.label :nearest_stations, '最寄駅１' %>
+  <%= f.label :nearest_stations, '最寄り駅１' %>
+  <%= f.fields_for :nearest_stations do |station_form| %>
+    <%= station_form.label :route %>
+    <%= station_form.text_field :route %>
+
+    <%= station_form.label :name %>
+    <%= station_form.text_field :name %>
+
+    <%= station_form.label :on_foot %>
+    <%= station_form.text_field :on_foot %>
+  <% end %>
+
+  <%= f.label :nearest_stations, '最寄り駅２' %>
   <%= f.fields_for :nearest_stations do |station_form| %>
     <%= station_form.label :route %>
     <%= station_form.text_field :route %>
