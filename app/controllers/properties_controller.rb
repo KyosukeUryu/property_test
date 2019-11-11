@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
   def index
+    @properties = Property.all
   end
 
   def new
@@ -16,4 +17,8 @@ class PropertiesController < ApplicationController
 
   def update
   end
+
+  def destroy
+  end
+  
 end
