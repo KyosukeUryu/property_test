@@ -1,0 +1,16 @@
+<ul>
+  <li>物件名：<%= @property.name %></li>
+  <li>賃料：<%= @property.rent %></li>
+  <li>住所：<%= @property.address %></li>
+  <li>築年数：<%= @property.age %></li>
+  <li>備考：<%= @property.remarks %></li>
+</ul>
+
+<% if @property.nearest_stations.first.present? %>
+  <h3>最寄り駅１</h3>
+  <ul>
+    <li>路線名 <%= @property.nearest_stations.first.route %></li>
+    <li>駅名 <%= @property.nearest_stations.first.name %></li>
+    <li>徒歩分数 <%= @property.nearest_stations.first.on_foot %>分</li>
+  </ul>
+<% end %>
