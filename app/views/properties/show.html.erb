@@ -6,11 +6,20 @@
   <li>備考：<%= @property.remarks %></li>
 </ul>
 
-<% if @property.nearest_stations.first.present? %>
+<% if @nearest_station1.present? %>
   <h3>最寄り駅１</h3>
   <ul>
-    <li>路線名 <%= @property.nearest_stations.first.route %></li>
-    <li>駅名 <%= @property.nearest_stations.first.name %></li>
-    <li>徒歩分数 <%= @property.nearest_stations.first.on_foot %>分</li>
+    <li>路線名 <%= @nearest_station1.route %></li>
+    <li>駅名 <%= @nearest_station1.name %></li>
+    <li>徒歩分数 <%= @nearest_station1.on_foot %>分</li>
+  </ul>
+<% end %>
+
+<% if @nearest_station2.present? %>
+  <h3>最寄り駅２</h3>
+  <ul>
+    <li>路線名 <%= @nearest_station2.route %></li>
+    <li>駅名 <%= @nearest_station2.name %></li>
+    <li>徒歩分数 <%= @nearest_station2.on_foot %>分</li>
   </ul>
 <% end %>
