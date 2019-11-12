@@ -27,8 +27,9 @@
   <li><%= f.text_area :remarks %></li>
 
   <div class="station_form">
-    <%= f.label :nearest_stations, '最寄り駅' %><br>
+  <% i = 0 %>
     <%= f.fields_for :nearest_stations do |station_form| %>
+      <h3>最寄り駅<%= i += 1 %></h3>
       <%= station_form.label :route %>
       <li><%= station_form.text_field :route %></li>
 
