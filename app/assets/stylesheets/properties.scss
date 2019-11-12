@@ -1,0 +1,53 @@
+li {
+  list-style: none;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-left: 1rem;
+}
+
+a {
+  color: gray;
+}
+
+table {
+  margin-left: 50px;
+}
+
+.name-cell {
+  width: 100px;
+}
+
+.rent-cell {
+  width: 80px;
+}
+
+.address-cell {
+  width: 160px;
+}
+
+.age-cell {
+  width: 35px;
+}
+
+.remarks-cell {
+  width: 800px;
+}
+
+.link-cell {
+  width: 20px;
+}
+
+.station_form {
+  border-top: 1px solid gray;
+  margin-top: 10px;
+}
+
+.link_view {
+  margin-left: 40px;
+}
+
+.show_property li {
+  padding: 20px;
+}
