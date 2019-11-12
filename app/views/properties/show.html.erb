@@ -23,3 +23,5 @@
     <li>徒歩分数 <%= @nearest_station2.on_foot %>分</li>
   </ul>
 <% end %>
+
+<%= link_to '編集', edit_property_path(@property.id) %>|<%= link_to '戻る', properties_path %>
