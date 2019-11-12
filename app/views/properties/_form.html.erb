@@ -24,7 +24,8 @@
   <li><%= f.text_field :age %>年</li>
 
   <%= f.label :remarks %>
-  <li><%= f.text_field :remarks %></li>
+  <li><%= f.text_area :remarks %></li>
+
   <div class="station_form">
     <%= f.label :nearest_stations, '最寄り駅' %><br>
     <%= f.fields_for :nearest_stations do |station_form| %>
